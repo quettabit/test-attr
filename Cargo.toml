@@ -3,7 +3,7 @@ name = "test-attr"
 version = "0.1.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
-decription = "Custom test attributes for convenience"
+description = "Custom test attributes for convenience."
 
 [dependencies]
 quote = "1.0"
