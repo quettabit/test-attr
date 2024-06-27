@@ -7,7 +7,7 @@ use quote::quote;
 pub fn unit_test(_args: TokenStream, input: TokenStream) -> TokenStream {
     let mut output: TokenStream = quote! {
         #[test]
-        #[cfg_attr(not(features = "unit-test"), ignore)]
+        #[cfg_attr(not(feature = "unit-test"), ignore)]
     }
     .into();
     output.extend(input.into_iter());
@@ -18,7 +18,7 @@ pub fn unit_test(_args: TokenStream, input: TokenStream) -> TokenStream {
 pub fn integration_test(_args: TokenStream, input: TokenStream) -> TokenStream {
     let mut output: TokenStream = quote! {
         #[test]
-        #[cfg_attr(not(features = "integration-test"), ignore)]
+        #[cfg_attr(not(feature = "integration-test"), ignore)]
     }
     .into();
     output.extend(input.into_iter());
@@ -29,7 +29,7 @@ pub fn integration_test(_args: TokenStream, input: TokenStream) -> TokenStream {
 pub fn system_test(_args: TokenStream, input: TokenStream) -> TokenStream {
     let mut output: TokenStream = quote! {
         #[test]
-        #[cfg_attr(not(features = "system-test"), ignore)]
+        #[cfg_attr(not(feature = "system-test"), ignore)]
     }
     .into();
     output.extend(input.into_iter());
@@ -40,7 +40,7 @@ pub fn system_test(_args: TokenStream, input: TokenStream) -> TokenStream {
 pub fn tokio_unit_test(_args: TokenStream, input: TokenStream) -> TokenStream {
     let mut output: TokenStream = quote! {
         #[tokio::test]
-        #[cfg_attr(not(features = "unit-test"), ignore)]
+        #[cfg_attr(not(feature = "unit-test"), ignore)]
     }
     .into();
     output.extend(input.into_iter());
@@ -51,7 +51,7 @@ pub fn tokio_unit_test(_args: TokenStream, input: TokenStream) -> TokenStream {
 pub fn tokio_integration_test(_args: TokenStream, input: TokenStream) -> TokenStream {
     let mut output: TokenStream = quote! {
         #[tokio::test]
-        #[cfg_attr(not(features = "integration-test"), ignore)]
+        #[cfg_attr(not(feature = "integration-test"), ignore)]
     }
     .into();
     output.extend(input.into_iter());
@@ -62,7 +62,7 @@ pub fn tokio_integration_test(_args: TokenStream, input: TokenStream) -> TokenSt
 pub fn tokio_system_test(_args: TokenStream, input: TokenStream) -> TokenStream {
     let mut output: TokenStream = quote! {
         #[tokio::test]
-        #[cfg_attr(not(features = "system-test"), ignore)]
+        #[cfg_attr(not(feature = "system-test"), ignore)]
     }
     .into();
     output.extend(input.into_iter());
